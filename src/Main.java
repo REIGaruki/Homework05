@@ -48,6 +48,20 @@ public class Main {
         } else {
             System.out.println("Год " + year + " - невисокосный");
         }
+        //Task 4
+        int deliveryDistance = 95;
+        int deliveryTime = 1;
+        if (deliveryDistance <= 100) {
+            if (deliveryDistance > 20) {
+                deliveryTime = deliveryTime + 1;
+                if (deliveryDistance > 60) {
+                    deliveryTime = deliveryTime + 1;
+                }
+            }
+            System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
+        } else {
+            System.out.println("Вы находитесь слишком далеко от банка, доставка невозможна");
+        }
 
     }
 }
