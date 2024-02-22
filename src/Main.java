@@ -21,14 +21,7 @@ public class Main {
         }
         //Task 3
         int year = 2021;
-        //solution 1
-        if ( (year < 1584) || ( (year % 4) != 0) || ( ( (year % 100) == 0)  && ( (year % 400) != 0) ) ) {
-            System.out.println("Год " + year + " - невисокосный");
-        } else {
-            System.out.println("Год " + year + " - високосный");
-        }
-        //solution 2
-        if ( (year >= 1584) && ( ( (year % 4) == 0) || ( ( (year % 100) != 0)  && ( (year % 400) == 0) ) ) ) {
+        if ( (year >= 1584) && ( ( (year % 4) == 0) &&  ( (year % 100) != 0) )  || ( (year % 400) == 0) )   {
             System.out.println("Год " + year + " - високосный");
         } else {
             System.out.println("Год " + year + " - невисокосный");
