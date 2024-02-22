@@ -29,7 +29,7 @@ public class Main {
         //Task 4
         int deliveryDistance = 95;
         int deliveryTime = 1;
-        if (deliveryDistance < 20) {
+        if (deliveryDistance <= 20) {
             System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
         }    else if ((deliveryDistance > 20) && (deliveryDistance <= 60)){
             deliveryTime = deliveryTime + 1;
