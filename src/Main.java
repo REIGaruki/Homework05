@@ -31,9 +31,11 @@ public class Main {
         int deliveryTime;
         if (deliveryDistance > 100) {
             System.out.println("Вы находитесь слишком далеко от банка, доставка невозможна");
-        } else {
+        } else if (deliveryDistance > 0){
             deliveryTime = (deliveryDistance + 59) / 40;
             System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
+        } else {
+            System.out.println("Ошибка, отрицательное расстояние!");
         }
         //Task 5
         byte monthNumber = 12;
