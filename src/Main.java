@@ -9,36 +9,31 @@ public class Main {
         }
         //Task 2
         clientOS = 0;
-        int clientDeviceYear = 2015;
-        if ((clientOS == 0) && (clientDeviceYear >= 2015)){
+        int clientDeviceYear = 2014;
+        if (clientOS == 0 && clientDeviceYear >= 2015){
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if ((clientOS == 1) && (clientDeviceYear >= 2015)){
+        } else if (clientOS == 1 && clientDeviceYear >= 2015){
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (clientDeviceYear < 2015) {
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
         //Task 3
         int year = 2021;
-        if ( (year >= 1584) && ( ( (year % 4) == 0) &&  ( (year % 100) != 0) )  || ( (year % 400) == 0) )   {
+        if (year >= 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0))  {
             System.out.println("Год " + year + " - високосный");
         } else {
             System.out.println("Год " + year + " - невисокосный");
         }
         //Task 4
         int deliveryDistance = 95;
-        int deliveryTime = 1;
-        if (deliveryDistance <= 20) {
-            System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
-        }    else if ((deliveryDistance > 20) && (deliveryDistance <= 60)){
-            deliveryTime = deliveryTime + 1;
-            System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
-        } else if (deliveryDistance <=100) {
-            deliveryTime = deliveryTime + 2;
-            System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
-        } else {
+        int deliveryTime;
+        if (deliveryDistance > 100) {
             System.out.println("Вы находитесь слишком далеко от банка, доставка невозможна");
+        } else {
+            deliveryTime = (deliveryDistance + 59) / 40;
+            System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
         }
         //Task 5
         byte monthNumber = 12;
@@ -66,7 +61,5 @@ public class Main {
             default:
             System.out.println("Такого месяца нет");
         }
-
-
     }
 }
