@@ -27,12 +27,15 @@ public class Main {
             System.out.println("Год " + year + " - невисокосный");
         }
         //Task 4
-        int deliveryDistance = 95;
-        int deliveryTime;
-        if (deliveryDistance > 100) {
+        int deliveryDistance = 95;// входные данные: расстояние до заказчика
+        int oneDayDistance = 20;// входные данные: расстояние доставки в течение суток
+        int nextDayDistance = 60;// входные данные: расстояние доставки в течение двух суток
+        int maxDistance = 100;// входные данные: радиус зоны покрытия
+        if (deliveryDistance > maxDistance) {
             System.out.println("Вы находитесь слишком далеко от банка, доставка невозможна");
         } else if (deliveryDistance > 0){
-            deliveryTime = (deliveryDistance + 59) / 40;
+            int deliveryTime;
+            deliveryTime = (deliveryDistance + nextDayDistance - 1) / (nextDayDistance - oneDayDistance);
             System.out.println("Вы находитесь за " + deliveryDistance + " км от банка, доставка потребует " + deliveryTime + " дней");
         } else {
             System.out.println("Ошибка, отрицательное расстояние!");
